@@ -1,0 +1,143 @@
+<html>
+	<head>
+		<title>User Page </title>
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="css/userstyle.css" type="text/css" media="all">
+		<script>
+			function check() 
+			{
+				document.getElementById("text").value = document.getElementById("ddl").value;
+				
+			}
+			function shift1() 
+			{
+				document.getElementById("text1").value = document.getElementById("fill1").value;
+				calTotal();
+			}
+			function shift2() 
+			{
+				document.getElementById("text2").value = document.getElementById("fill2").value;
+				calTotal();
+			}
+		</script>
+		<script>
+			function calTotal(){ 
+                output.value = +text1.value + +text2.value; 
+            }
+		</script>
+		
+				
+	</head>
+	<body>
+	<div id="header">
+		<div id="header img">
+			<img src="images/" alt="" />
+		</div>
+	</div>
+	<input type="submit" name="login" class="login login-submit" value="Monthly Attendance Tracker">
+	<form name="myform" action = "" >
+	<table style="margin-left:20px; margin-top:20px;">
+		<tr>
+			<td>ID</td>
+			<td><input type="text" name="tic"></td>
+		</tr>
+		<tr>
+			<td> Employee Name</td>
+			<td><input type="text"  name="sdengg"/></td>
+		</tr>
+		<tr>
+			<td>L3 Support Team</td>
+			<td>
+				<select  id="ddl"  onchange="check()">
+					<option value="">Select</option>
+					<option value="Praveen">CTS</option>
+					<option value="Narayan">EUE</option>
+					<option value="Adnan">SCM</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Manager</td>
+			<td>
+				<input type="text" id="text" name="manager" />
+			</td>
+		</tr>
+		<tr>
+			<td>Month of Attendance</td>
+			<td>
+				<select name="moa">
+					<option >Select</option>
+					<option >January</option>
+					<option>February</option>
+					<option>March</option>
+					<option>April</option>
+					<option>May</option>
+					<option>June</option>
+					<option>July</option>
+					<option>August</option>
+					<option>September</option>
+					<option>October</option>
+					<option>November</option>
+					<option>December</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	<table class="htable">
+			
+		<tr class="htable" >
+			<td class="htable"  >No of Working Days</td>
+			<td class="htable"  >Select Date</td>
+			<td class="htable" > Date</td>
+			<td class="htable" >Shift</td>
+			<td class="htable" >Allowance</td>
+			<td class="htable" >Total Hours</td>
+			<td class="htable" >Comments</td>
+		</tr>
+		<tr	>
+			<td>1</td>
+			<td><input type="text" id="date1" name="date1" /></td>
+			<td><input type="text" id="date1" name="date1" /></td>
+			<td>
+				<select  id="fill1"  onchange="shift1()">
+					<option value="">Select</option>
+					<option value="450">Evening</option>
+					<option value="250">Afternoon</option>
+					<option value="0">Genral</option>
+				</select>
+			</td>
+			<td><input type="text" id="text1" name="text1" /></td>			
+			<td><input type="text" id="totalhours1" name="totalhours1" /></td>
+			<td><input type="text" id="comments1" name="comments1" /></td>
+		</tr>
+<tr	>
+			<td>2</td>
+			<td><input type="text" id="date2" name="date2" /></td>
+			<td><input type="text" id="date2" name="date2" /></td>
+			<td>
+				<select  id="fill2"  onchange="shift2()">
+					<option value="">Select</option>
+					<option value="450">Evening</option>
+					<option value="250">Afternoon</option>
+					<option value="0">Genral</option>
+				</select>
+			</td>
+			<td><input type="text" id="text2" name="text2" /></td>			
+			<td><input type="text" id="totalhours2" name="totalhours2" /></td>
+			<td><input type="text" id="comments2" name="comments22" /></td>
+		</tr>		
+	</table>
+	<table>
+	<tr>   
+		<td>Total Allowance</td>
+	</tr>
+	<tr>
+	<td width="100px"><input id="output" readonly="readonly" type="text"  name="tmks"/></td>
+	
+	</tr>
+	</table>
+	<br/><br/>	
+	<div id="footer">
+	</div>
+	</body>
+</html>

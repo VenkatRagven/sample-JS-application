@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/userstyle.css" type="text/css" media="all">
+<link href="jquery-ui/jquery-ui/jquery-ui.css" rel="stylesheet">
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+  $("#flip1").click(function(){
+    $("#panel1").slideToggle("slow1");
+  });
+});
+
+
+
+function check() 
+			{
+				document.getElementById("text").value = document.getElementById("ddl").value;
+				
+			}
+</script>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="css/userstyle.css" type="text/css" media="all">
+		
+		<script>
+			function calAfternoon()
+			{ 
+                output.value = +myInput.value + +onCallAllowance1.value + +myInput1.value  + +onCallAllowance2.value
+			}
+		</script>
+		
+		<script>
+			function calEvening()
+			{ 
+                output.value = +myInput.value + +onCallAllowance1.value + +myInput1.value + +onCallAllowance2.value
+			}
+		</script>
+		<script type="text/javascript" src="multiply.js"></script>
+
+</head>
+<body onload="multiply.myFunction()();" >
+		<div id="header">
+			<div id="header img"><img src="images/" alt="" /></div>
+		</div>
+		<div id="content">
+			<input type="submit" name="login" class="login login-submit" value="Monthly Attendance Tracker">
+			<form name="myform" action = "" >
+			<table style="margin-left:20px; margin-top:20px;">
+				<tr>
+					<td> ID</td>
+					<td><input type="text" name="tic"></td>
+				</tr>
+				<tr>
+					<td> Employee Name</td>
+					<td><input type="text"  name="sdengg"/></td>
+				</tr>
+				<tr>
+					<td>L3 Support Team</td>
+					<td>
+						<select  id="ddl"  onchange="check()">
+							<option value="">Select</option>
+							<option value="Praveen B">CTS</option>
+							<option value="Narayan Balaji Rao">EUE</option>
+							<option value="Adnan Jimmy">SCM</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Manager</td>
+					<td><input type="text" id="text" name="manager" /></td>
+				</tr>
+				<tr>
+					<td>Month of Attendance</td>
+					<td>
+						<select name="moa">
+							<option >Select</option>
+							<option >January</option>
+							<option>February</option>
+							<option>March</option>
+							<option>April</option>
+							<option>May</option>
+							<option>June</option>
+							<option>July</option>
+							<option>August</option>
+							<option>September</option>
+							<option>October</option>
+							<option>November</option>
+							<option>December</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<br/> <br/>
+			<!-- <span style="cursor:pointer">pointer</span><br> -->
+			<div id="flip"><span style="cursor:pointer">Weekly Based Details - Allowance Calculation </span></div>
+			<div id="panel">
+				<table class="htable">
+					<tr class="htable" >
+						<td class="htable"  >No of Working Days</td>
+						<td class="htable"  >Select Date</td>
+						<td class="htable" >Shift <br>(Afternoon) </td>
+						<td class="htable" >WFH <br>(Afternoon) </td>
+						<td class="htable" >Shift <br>(Evening)</td>
+						<td class="htable" >WFH <br>(Evening)</td>
+						<td class="htable" >ON  CALL</td>
+						<td class="htable" style="width:2%" >Allowance<br> Applicable</td>
+						<td class="htable" style="width:2%" >On Call<br> Allowance</td>
+						<td class="htable" >Total Hours</td>
+						
+						<td class="htable" >Comments</td>
+					</tr>
+					<tr	>
+						<td>1</td>
+						<td><input type="text" id="datepicker"></td>
+				
+						
+						<td>
+							<label><input type="checkbox" id="aftCheckBox1" value="1" size="12"/></label>
+						</td>
+						<td>
+							<label><input type="checkbox" id="wfhAft1" value="1" size="12"/></label>
+						</td>
+						<td>
+							<label><input type="checkbox" id="evngCheckBox1" value="1" size="12" /></label>
+						</td>
+						<td>
+							<label><input type="checkbox" id="wfhEvng1" value="1" size="12"/></label>
+						</td>
+						<td>
+							<label><input type="checkbox" id="oncall1" value="1" size="12" /></label>
+						</td>
+						
+						<td><input readonly="readonly" id="myInput" name="text1" size="12" /></td>
+						<td><input readonly="readonly" id="onCallAllowance1" name="onCallAllowance1"  value="" size="12"/></td>						
+						<td><input readonly="readonly" id="totalhours1" name="totalhours1" value="15" size="12" /></td>
+						<td><input type="text" id="comments1" name="comments1"  rows="4" /></td>
+					</tr>
+					<tr	>
+						<td>2</td>
+						<td><input type="text" id="datepicker1"></td>
+						
+						<td>
+							<label><input type="checkbox" id="aftCheckBox2" value="1" size="12"/></label>
+						</td>
+						<td>
+							<label><input type="checkbox" id="wfhAft2" value="1" size="12" /></label>
+						</td>
+						<td>
+							<label><input type="checkbox" id="evngCheckBox2" value="1" size="12"/></label>
+						</td>
+						<td>
+							<label><input type="checkbox" id="wfhEvng2" value="1" size="12" /></label>
+						</td>
+						<td>
+							<label><input type="checkbox" id="oncall2" value="1" size="12"/></label>
+						</td>
+						<td><input readonly="readonly" id="myInput1" name="text2" size="12" /></td>	
+						<td><input readonly="readonly" id="onCallAllowance2" name="onCallAllowance2" size="12" value=""/></td>						
+						<td><input readonly="readonly" id="totalhours2" name="totalhours2" size="12" value="2"/></td>
+						<td><input type="text" id="comments2" name="comments22" /></td>
+					</tr>		
+				</table>
+				<table style="margin-left:40%;margin-top:1%;">
+					<tr >   
+						<td>Total Allowance </td>
+					</tr>
+					<tr>
+						<td>INR:<input id="output" readonly="readonly" type="text"  name="tmks"/></td>
+					</tr>
+				</table>
+				<br/><br/>
+			
+			</div>
+		</div>
+		<!--	<div id="footer">
+	</div> -->
+<script type="text/javascript" src="control.js"></script>
+<script src="jquery-ui/jquery-ui/external/jquery/jquery.js"></script>
+<script src="jquery-ui/jquery-ui/jquery-ui.js"></script>
+<script>
+$( "#datepicker" ).datepicker({
+	inline: true
+});
+$( "#datepicker1" ).datepicker({
+	inline: true
+});
+</script>
+		
+</body>
+	
+		
+	
+	
+</html>

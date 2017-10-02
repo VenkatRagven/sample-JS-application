@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/userstyle.css" type="text/css" media="all">
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+  $("#flip1").click(function(){
+    $("#panel1").slideToggle("slow1");
+  });
+});
+function check() 
+			{
+				document.getElementById("text").value = document.getElementById("ddl").value;
+				
+			}
+</script>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="css/userstyle.css" type="text/css" media="all">
+		
+		<script>
+			function calAfternoon()
+			{ 
+                output.value = +myInput.value + +myInput1.value
+			}
+		</script>
+		
+		<script>
+			function calEvening()
+			{ 
+                output.value = +myInput.value + +myInput1.value
+			}
+		</script>
+		
+ 
+
+</head>
+<body onload="calculate()">
+		<div id="header">
+			<div id="header img"><img src="images/logo.jpg" alt="logo" /></div>
+		</div>
+		<div id="content">
+			<input type="submit" name="login" class="login login-submit" value="Monthly Attendance Tracker">
+			<form name="myform" action = "" >
+			<table style="margin-left:20px; margin-top:20px;">
+				<tr>
+					<td> ID</td>
+					<td><input type="text" name="tic"></td>
+				</tr>
+				<tr>
+					<td> Employee Name</td>
+					<td><input type="text"  name="sdengg"/></td>
+				</tr>
+				<tr>
+					<td>L3 Support Team</td>
+					<td>
+						<select  id="ddl"  onchange="check()">
+							<option value="">Select</option>
+							<option value="Praveen">CTS</option>
+							<option value="Narayan">EUE</option>
+							<option value="Adnan">SCM</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Manager</td>
+					<td><input type="text" id="text" name="manager" /></td>
+				</tr>
+				<tr>
+					<td>Month of Attendance</td>
+					<td>
+						<select name="moa">
+							<option >Select</option>
+							<option >January</option>
+							<option>February</option>
+							<option>March</option>
+							<option>April</option>
+							<option>May</option>
+							<option>June</option>
+							<option>July</option>
+							<option>August</option>
+							<option>September</option>
+							<option>October</option>
+							<option>November</option>
+							<option>December</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<br/> <br/>
+			<!-- <span style="cursor:pointer">pointer</span><br> -->
+			<div id="flip"><span style="cursor:pointer">Weekly Based Details - Allowance Calculation For Afternoon Shift</span></div>
+			<div id="panel">
+				<table class="htable">
+					<tr class="htable" >
+						<td class="htable"  >No of Working Days</td>
+						<td class="htable"  >Select Date</td>
+						<td class="htable" > Date</td>
+						<td class="htable" >Shift <br>(Afternoon)</td>
+						<td class="htable" >Shift <br>(Evening)</td>
+						<td class="htable" >Allowance Applicable</td>
+						<td class="htable" >Total Hours</td>
+						
+						<td class="htable" >Comments</td>
+					</tr>
+					<tr	>
+						<td>1</td>
+						<td><input type="text" id="date1" name="date1" /></td>
+						<td><input type="text" id="date1" name="date1" /></td>
+						
+						<td>
+							<label><input type="checkbox" id="myCheckBox" value="1" /></label>
+						</td>
+						<td>
+							<label><input type="checkbox" id="myCheckBox2" value="1" /></label>
+						</td>
+						
+						<td><input readonly="readonly" id="myInput" name="text1" /></td>			
+						<td><input readonly="readonly" id="totalhours1" name="totalhours1" value="5" /></td>
+						<td><input type="text" id="comments1" name="comments1" /></td>
+					</tr>
+					<tr	>
+						<td>2</td>
+						<td><input type="text" id="date2" name="date2" /></td>
+						<td><input type="text" id="date2" name="date2" /></td>
+						<td>
+							<label><input type="checkbox" id="myCheckBox1" value="1" /></label>
+						</td>
+						<td>
+							<label><input type="checkbox" id="myCheckBox3" value="1" /></label>
+						</td>
+						<td><input readonly="readonly" id="myInput1" name="text2" /></td>			
+						<td><input readonly="readonly" id="totalhours2" name="totalhours2"  value="8"/></td>
+						<td><input type="text" id="comments2" name="comments22" /></td>
+					</tr>		
+				</table>
+				<table>
+					<tr>   
+						<td>Total Allowance</td>
+					</tr>
+					<tr>
+						<td width="100px"><input id="output" readonly="readonly" type="text"  name="tmks"/></td>
+					</tr>
+				</table>
+				<br/><br/>
+			</div>
+		
+			
+</body>
+
+<script type="text/javascript">
+			// Define variables
+		var checkBox, input, span, currentValue;
+
+		// Assign values to variables
+		checkBox = document.getElementById("myCheckBox");
+		input = document.getElementById("myInput");
+		span = document.getElementById("result");
+
+		// Control function
+		function control() 
+		{
+			// Current state of the check box
+			currentValue = (checkBox.checked) ? "250" : "0";
+    
+			// Change input value
+			input.value = currentValue;
+    
+			// Change span element's text
+			//span.innerHTML = "Current state : " + currentValue;
+			calAfternoon();
+		}
+
+		// Assign control function on our checkBox element's onchange event
+		checkBox.onchange = control;
+
+		// Execute our control function once when page loads
+		control();
+		
+		
+		//----- End of First Function -------------
+		
+		// Define variables
+		var checkBox1, input1, span1, currentValue1;
+
+		// Assign values to variables
+		checkBox1 = document.getElementById("myCheckBox1");
+		input1 = document.getElementById("myInput1");
+		span1 = document.getElementById("result1");
+
+		// Control function
+		function control1() 
+		{
+			// Current state of the check box
+			currentValue1 = (checkBox1.checked) ? "250" : "0";
+    
+			// Change input value
+			input1.value = currentValue1;
+    
+			// Change span element's text
+			//span.innerHTML = "Current state : " + currentValue;
+			calAfternoon();
+		}
+
+		// Assign control function on our checkBox element's onchange event
+		checkBox1.onchange = control1;
+
+		// Execute our control function once when page loads
+		control1();
+		
+		
+		//------------ End of 2nd function------------
+		//------------ Start of Evening Calculation---------
+		
+		// Define variables
+		var checkBox2, input2, span2, currentValue2;
+
+		// Assign values to variables
+		checkBox2 = document.getElementById("myCheckBox2");
+		input2 = document.getElementById("myInput");
+		span2 = document.getElementById("result");
+
+		// Control function
+		function control2() 
+		{
+			// Current state of the check box
+			currentValue2 = (checkBox2.checked) ? "450" : "0";
+    
+			// Change input value
+			input2.value = currentValue2;
+    
+			// Change span element's text
+			//span.innerHTML = "Current state : " + currentValue;
+			calEvening();
+		}
+
+		// Assign control function on our checkBox element's onchange event
+		checkBox2.onchange = control2;
+
+		// Execute our control function once when page loads
+		control2();	
+
+		//--------------End of First Evening Function--------------
+		// Define variables
+		var checkBox3, input3, span3, currentValue3;
+
+		// Assign values to variables
+		checkBox3 = document.getElementById("myCheckBox3");
+		input3 = document.getElementById("myInput1");
+		span3 = document.getElementById("result1");
+
+		// Control function
+		function control3() 
+		{
+			// Current state of the check box
+			currentValue3 = (checkBox3.checked) ? "450" : "0";
+    
+			// Change input value
+			input3.value = currentValue3;
+    
+			// Change span element's text
+			//span.innerHTML = "Current state : " + currentValue;
+			calEvening();
+		}
+
+		// Assign control function on our checkBox element's onchange event
+		checkBox3.onchange = control3;
+
+		// Execute our control function once when page loads
+		control3();		
+	</script>
+
+</html>
